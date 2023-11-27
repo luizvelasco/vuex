@@ -7,14 +7,38 @@ export default createStore({
       last_name: 'Snow',
       email: 'jon@snow.com'
     },
-    products: [],
-    carts: []
+    products: [
+      {
+        id: 1,
+        name: 'Bola',
+        price: 100
+      },
+      {
+        id: 2,
+        name: 'Chuteira',
+        price: 200
+      },
+      {
+        id: 3,
+        name: 'Meião',
+        price: 50
+      },
+    ],
+    cart: []
     
   },
   mutations: {
     storeUser(state, data) {
       state.user = data;
       
+    },
+
+    addProducts(state, data){
+      state.cart.push(data);
+    },
+
+    removeProduct(state, id) {
+      const idx = state.cart
     }
   },
   actions: {
