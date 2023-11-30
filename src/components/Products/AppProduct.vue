@@ -4,6 +4,10 @@
         <button @click="addProduct()">
             Adicionar
         </button>
+
+        <button @click="removeProduct()">
+            Remove
+        </button>
     </div>
 </template>
 
@@ -16,6 +20,10 @@ export default {
     methods: {
         addProduct(){
             this.$store.commit('addProduct', this.product);
+        },
+
+        removeProduct(){
+            this.$store.commit('removeProduct', this.product.id);
         }
     }
 }

@@ -33,12 +33,13 @@ export default createStore({
       
     },
 
-    addProducts(state, data){
+    addProduct(state, data){
       state.cart.push(data);
     },
 
     removeProduct(state, id) {
-      const idx = state.cart
+      const idx = state.cart.findIndex(o => o.id === id);
+      state.cart.splice(idx, 1);  
     }
   },
   actions: {
