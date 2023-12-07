@@ -43,6 +43,10 @@ export default createStore({
     }
   },
   actions: {
+    storeUser(context, data) {
+      console.log(context, data);
+      context.state.user = data;
+    }
   },
   getters: {
     total(state){
